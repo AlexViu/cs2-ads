@@ -1,0 +1,14 @@
+{
+  "Enabled": true,
+  "IntervalSeconds": 30.0,
+  "RandomOrder": false,
+  "Mode": "chat",
+  "Prefix": "{green}[SERVER]{default}",
+  "Messages": [
+    "{prefix} Bienvenido al servidor, escribe {gold}!discord{default} para unirte a la comunidad.",
+    "{prefix} Mapa actual: {gold}{map}{default} - Jugadores: {gold}{players}/{maxplayers}{default}",
+    "{prefix} Sigue las {gold}reglas del servidor{default} para evitar sanciones.",
+    "{prefix} Visita nuestra web: {lightblue}www.example.com{default}"
+  ],
+  "ConfigVersion": 1
+}

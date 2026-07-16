@@ -23,10 +23,27 @@ El `.dll` resultante queda en `bin/Release/net10.0/CS2Ads.dll`.
 
 1. Copia `CS2Ads.dll` (y las demás dependencias generadas en esa carpeta) a:
    `game/csgo/addons/counterstrikesharp/plugins/CS2Ads/`
-2. Inicia o reinicia el mapa. La primera vez se generará automáticamente el archivo de
-   configuración en:
+2. Copia `configs/CS2Ads.json` (incluido en este repo) a:
    `game/csgo/addons/counterstrikesharp/configs/plugins/CS2Ads/CS2Ads.json`
-3. Edita ese JSON a tu gusto (ver ejemplo abajo) y recarga con `css_plugins reload CS2Ads`.
+
+   Si no lo copias, no pasa nada: CounterStrikeSharp genera ese mismo archivo
+   automáticamente la primera vez que carga el plugin, usando los valores por
+   defecto definidos en `CS2AdsConfig.cs`.
+3. Inicia o reinicia el mapa.
+
+## Añadir / editar mensajes
+
+Los anuncios **no** están en el código — viven en el JSON de configuración del servidor
+(`CS2Ads.json`), así que puedes cambiarlos en cualquier momento sin recompilar el plugin:
+
+1. Abre `game/csgo/addons/counterstrikesharp/configs/plugins/CS2Ads/CS2Ads.json` en el servidor.
+2. Añade, edita o borra strings dentro del array `"Messages"`.
+3. Guarda y, desde la consola del servidor (o RCON), ejecuta `css_plugins reload CS2Ads`
+   (o cambia de mapa) para que recargue la config sin reiniciar el servidor entero.
+
+Si además quieres llevar control de versiones de tus anuncios, edita también
+`configs/CS2Ads.json` en este repo y haz commit — es una copia idéntica a la que
+usa el servidor, pensada para servir como plantilla/backup versionado.
 
 ## Configuración (`CS2Ads.json`)
 

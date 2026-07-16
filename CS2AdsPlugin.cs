@@ -16,7 +16,7 @@ public class CS2AdsPlugin : BasePlugin, IPluginConfig<CS2AdsConfig>
 {
     public override string ModuleName => "CS2Ads";
     public override string ModuleVersion => "1.0.0";
-    public override string ModuleAuthor => "you";
+    public override string ModuleAuthor => "Lonza";
     public override string ModuleDescription => "Rotates advertisement messages in chat/center at a fixed interval.";
 
     public CS2AdsConfig Config { get; set; } = new();
