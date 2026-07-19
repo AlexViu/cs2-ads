@@ -53,7 +53,7 @@ usa el servidor, pensada para servir como plantilla/backup versionado.
   "IntervalSeconds": 30.0,
   "RandomOrder": false,
   "Mode": "chat",
-  "Prefix": "{green}[SERVER]{default}",
+  "Prefix": "{default}[SERVER]{default}",
   "Messages": [
     "{prefix} Bienvenido al servidor, escribe {gold}!discord{default} para unirte a la comunidad.",
     "{prefix} Mapa actual: {gold}{map}{default} - Jugadores: {gold}{players}/{maxplayers}{default}",
@@ -69,6 +69,18 @@ usa el servidor, pensada para servir como plantilla/backup versionado.
 - Tags de color: cualquier nombre de `ChatColors` (p. ej. `{default}`, `{red}`, `{green}`,
   `{gold}`, `{lightblue}`, `{purple}`, `{yellow}`, `{orange}`, `{lime}`, `{grey}`...). Solo
   aplican al modo chat; en `center` se eliminan automáticamente.
+
+### ⚠️ Límite de un color por línea (limitación del motor de CS2, no del plugin)
+
+El chat de CS2 solo permite renderizar **un color "especial" distinto por línea**
+(cualquiera que no sea `{default}`). Si combinas dos colores distintos como `{green}`
+y `{gold}` en el mismo mensaje (por ejemplo uno en el `Prefix` y otro en el cuerpo),
+solo se aplicará el último — el resto se muestra en blanco/color por defecto.
+
+- `{default}` siempre es seguro de combinar con cualquier otro color (no cuenta para el límite).
+- Repetir el **mismo** color varias veces en una línea funciona bien (no es "otro" color).
+- Si quieres el prefijo de un color y el cuerpo del mensaje de otro, tendrás que elegir uno
+  de los dos, o dejar el prefijo en `{default}` (como viene configurado por defecto).
 
 ## Comandos (requieren `@css/root`)
 

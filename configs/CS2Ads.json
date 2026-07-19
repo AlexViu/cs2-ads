@@ -3,7 +3,7 @@
   "IntervalSeconds": 30.0,
   "RandomOrder": false,
   "Mode": "chat",
-  "Prefix": "{green}[SERVER]{default}",
+  "Prefix": "{default}[SERVER]{default}",
   "Messages": [
     "{prefix} Bienvenido al servidor, escribe {gold}!discord{default} para unirte a la comunidad.",
     "{prefix} Mapa actual: {gold}{map}{default} - Jugadores: {gold}{players}/{maxplayers}{default}",

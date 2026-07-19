@@ -19,7 +19,7 @@ public class CS2AdsConfig : BasePluginConfig
     public string Mode { get; set; } = "chat";
 
     [JsonPropertyName("Prefix")]
-    public string Prefix { get; set; } = "{green}[SERVER]{default}";
+    public string Prefix { get; set; } = "{default}[SERVER]{default}";
 
     [JsonPropertyName("Messages")]
     public List<string> Messages { get; set; } = new()
