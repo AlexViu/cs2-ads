@@ -55,10 +55,10 @@ usa el servidor, pensada para servir como plantilla/backup versionado.
   "Mode": "chat",
   "Prefix": "{default}[SERVER]{default}",
   "Messages": [
-    "{prefix} Bienvenido al servidor, escribe {gold}!discord{default} para unirte a la comunidad.",
-    "{prefix} Mapa actual: {gold}{map}{default} - Jugadores: {gold}{players}/{maxplayers}{default}",
-    "{prefix} Sigue las {gold}reglas del servidor{default} para evitar sanciones.",
-    "{prefix} Visita nuestra web: {lightblue}www.example.com{default}"
+    "{prefix} Bienvenido al servidor, escribe !discord para unirte a la comunidad.",
+    "{prefix} Mapa actual: {map} - Jugadores: {players}/{maxplayers}",
+    "{prefix} Sigue las reglas del servidor para evitar sanciones.",
+    "{prefix} Visita nuestra web: www.example.com"
   ],
   "ConfigVersion": 1
 }
@@ -81,6 +81,13 @@ solo se aplicará el último — el resto se muestra en blanco/color por defecto
 - Repetir el **mismo** color varias veces en una línea funciona bien (no es "otro" color).
 - Si quieres el prefijo de un color y el cuerpo del mensaje de otro, tendrás que elegir uno
   de los dos, o dejar el prefijo en `{default}` (como viene configurado por defecto).
+
+**Por eso los mensajes por defecto ya no llevan color en el cuerpo** — solo el `{prefix}`
+lleva color especial. Así, si cambias `Prefix` a por ejemplo
+`"{lightblue}[Random Picks]{default}"`, se aplicará correctamente en todos los mensajes,
+porque no compite con ningún otro color en la misma línea. Si quieres además resaltar
+una palabra dentro del cuerpo (p. ej. `!discord` en dorado), usa el **mismo** color que
+el `Prefix` (en este ejemplo `{lightblue}`, no `{gold}`), o el prefijo perderá su color.
 
 ## Comandos (requieren `@css/root`)
 

@@ -24,9 +24,9 @@ public class CS2AdsConfig : BasePluginConfig
     [JsonPropertyName("Messages")]
     public List<string> Messages { get; set; } = new()
     {
-        "{prefix} Bienvenido al servidor, escribe {gold}!discord{default} para unirte a la comunidad.",
-        "{prefix} Mapa actual: {gold}{map}{default} - Jugadores: {gold}{players}/{maxplayers}{default}",
-        "{prefix} Sigue las {gold}reglas del servidor{default} para evitar sanciones.",
-        "{prefix} Visita nuestra web: {lightblue}www.example.com{default}"
+        "{prefix} Bienvenido al servidor, escribe !discord para unirte a la comunidad.",
+        "{prefix} Mapa actual: {map} - Jugadores: {players}/{maxplayers}",
+        "{prefix} Sigue las reglas del servidor para evitar sanciones.",
+        "{prefix} Visita nuestra web: www.example.com"
     };
 }
