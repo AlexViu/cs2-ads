@@ -127,12 +127,12 @@ public class CS2AdsPlugin : BasePlugin, IPluginConfig<CS2AdsConfig>
     private static Dictionary<string, char> BuildColorTags()
     {
         var map = new Dictionary<string, char>(StringComparer.OrdinalIgnoreCase);
-        var props = typeof(ChatColors).GetProperties(BindingFlags.Public | BindingFlags.Static)
-            .Where(p => p.PropertyType == typeof(char) && p.GetCustomAttribute<ObsoleteAttribute>() == null);
+        var fields = typeof(ChatColors).GetFields(BindingFlags.Public | BindingFlags.Static)
+            .Where(f => f.FieldType == typeof(char) && f.GetCustomAttribute<ObsoleteAttribute>() == null);
 
-        foreach (var prop in props)
+        foreach (var field in fields)
         {
-            map[prop.Name] = (char)prop.GetValue(null)!;
+            map[field.Name] = (char)field.GetValue(null)!;
         }
 
         return map;
