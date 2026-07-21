@@ -69,27 +69,3 @@ usa el servidor, pensada para servir como plantilla/backup versionado.
 - Tags de color: cualquier nombre de `ChatColors` (p. ej. `{default}`, `{red}`, `{green}`,
   `{gold}`, `{lightblue}`, `{purple}`, `{yellow}`, `{orange}`, `{lime}`, `{grey}`...). Solo
   aplican al modo chat; en `center` se eliminan automáticamente.
-
-### ⚠️ Límite de un color por línea (limitación del motor de CS2, no del plugin)
-
-El chat de CS2 solo permite renderizar **un color "especial" distinto por línea**
-(cualquiera que no sea `{default}`). Si combinas dos colores distintos como `{green}`
-y `{gold}` en el mismo mensaje (por ejemplo uno en el `Prefix` y otro en el cuerpo),
-solo se aplicará el último — el resto se muestra en blanco/color por defecto.
-
-- `{default}` siempre es seguro de combinar con cualquier otro color (no cuenta para el límite).
-- Repetir el **mismo** color varias veces en una línea funciona bien (no es "otro" color).
-- Si quieres el prefijo de un color y el cuerpo del mensaje de otro, tendrás que elegir uno
-  de los dos, o dejar el prefijo en `{default}` (como viene configurado por defecto).
-
-**Por eso los mensajes por defecto ya no llevan color en el cuerpo** — solo el `{prefix}`
-lleva color especial. Así, si cambias `Prefix` a por ejemplo
-`"{lightblue}[Random Picks]{default}"`, se aplicará correctamente en todos los mensajes,
-porque no compite con ningún otro color en la misma línea. Si quieres además resaltar
-una palabra dentro del cuerpo (p. ej. `!discord` en dorado), usa el **mismo** color que
-el `Prefix` (en este ejemplo `{lightblue}`, no `{gold}`), o el prefijo perderá su color.
-
-## Comandos (requieren `@css/root`)
-
-- `css_ads_skip`: fuerza el siguiente anuncio de inmediato.
-- `css_ads_toggle`: activa/desactiva la rotación sin recargar el plugin.
